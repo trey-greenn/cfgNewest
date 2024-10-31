@@ -45,7 +45,19 @@ INSERT INTO ci.CFG_FEEDBACK_TYPES
            ,FEEDBACK_TYPE_NAME
            ,NEXT_FEEDBACK_TYPE_IDS)
      VALUES
-         (2, 'Inconclusive', 'Inconclusive');
+         ('unassigned', 'Unassigned', 'assignedNotStarted'),
+	('assignedNotStarted',	'Assigned Not Started',	'assignedInProgress'),
+	('assignedInProgress',	'Assigned In Progress',	'assignedOnHold,qaReview'),
+	('assignedOnHold',	'Assigned On Hold',	'assignedInProgress'),
+	('qaReview',	'QA Review',	'qaReturned,managerReview,closedNotSuspicious'),
+	('qaReturned',	'QA Returned For Revision', ' '),	
+	('managerReview',	'Manager Review',	'managerReturned,closedNotSuspicious,sarRecommended'),
+	('managerReturned',	'Manager Returned For Revision', ' '),	
+	('closedNotSuspicious',	'Closed Not Suspicious', ' '),	
+	('sarRecommended',	'SAR Recommended',	'closedSarToBeFiled,closedNotSuspicious'),
+	('closedSarToBeFiled',	'Closed SAR To Be Filed',	'closedSarFiled'),
+	('closedSarFiled',	'Closed SAR Filed', ' ');
+
 
 
 
